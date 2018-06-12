@@ -15,8 +15,8 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO mysql/mysql-server
-    REF mysql-8.0.4
-    SHA512 8d9129e7670e88df14238299052a5fe6d4f3e40bf27ef7a3ca8f4f91fb40507b13463e9bd24435b34e5d06c5d056dfb259fb04e77cc251b188eea734db5642be
+    REF mysql-8.0.11
+    SHA512 c0b5e0dc08225b3bdc673e9953364e11c06a5c62ab7d1a4478c3d66b48045130ea1433bfa7e27f4fcf5cceca6d07e16cd34226f62ac8623d64451b6afd478ce9
     HEAD_REF master
 )
 

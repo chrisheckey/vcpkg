@@ -12,8 +12,8 @@ endif()
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO grpc/grpc
-    REF v1.10.1
-    SHA512 2221d902c60eada6dd1547a63d26bd3b30cb6710247b5e48523bacde498a3691cc177f1dbe9db8a007b8ae341a5b0c8ec999539e26a9bcff480a8d0b02140997
+    REF v1.12.1
+    SHA512 9dd6d8c4b4e2713cf27ed55b1e97fdf5ed6d80f43b798b83f08e2f4646387dfd0696b21d4f44dbd99a061d388790dc15da49ac5afb0bb06116cfd6f07b7d6962
     HEAD_REF master
     PATCHES
         ${CMAKE_CURRENT_LIST_DIR}/disable-csharp-ext.patch

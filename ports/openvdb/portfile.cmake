@@ -2,10 +2,10 @@ include(vcpkg_common_functions)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO dreamworksanimation/openvdb
-    REF v5.0.0
+    REPO chrisheckey/openvdb
+    REF v5.2.0
     SHA512 8916d54683d81144114e57f8332be43b7547e6da5d194f6147bcefd4ee9e8e7ec817f27b65adb129dfd149e6b308f4bab30591ee953ee2c319636491bf051a2b
-    HEAD_REF master
+    HEAD_REF dwfx_dev
 )
 
 vcpkg_apply_patches(

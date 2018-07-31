@@ -36,6 +36,10 @@ endif()
 
 if("python" IN_LIST FEATURES)
     set(WITH_PYTHON ON)
+    
+    vcpkg_find_acquire_program(SWIG)
+    get_filename_component(SWIG_DIR "${SWIG}" DIRECTORY)
+    set(ENV{PATH} "$ENV{PATH};${SWIG_DIR}")
 else()
     set(WITH_PYTHON OFF)
 endif()
@@ -102,6 +106,12 @@ file(COPY ${MAIN_REL} DESTINATION ${CURRENT_PACKAGES_DIR}/lib/manual-link)
 file(GLOB MAIN_DBG ${CURRENT_PACKAGES_DIR}/debug/lib/OgreMain_d.lib ${CURRENT_PACKAGES_DIR}/debug/lib/OgreMainStatic_d.lib)
 file(COPY ${MAIN_DBG} DESTINATION ${CURRENT_PACKAGES_DIR}/debug/lib/manual-link)
 file(REMOVE ${MAIN_REL} ${MAIN_DBG})
+
+if("python" IN_LIST FEATURES)
+    file(GLOB PYTHON_MODULES ${CURRENT_PACKAGES_DIR}/lib/python*/dist-packages/*)
+    file(COPY ${PYTHON_MODULES} DESTINATION ${CURRENT_PACKAGES_DIR}/python/Lib/site-packages)
+    file(REMOVE ${PYTHON_MODULES})
+endif()
 
 # Ogre installs custom cmake config files which don't follow the normal pattern.
 # This normally makes them completely incompatible with multi-config generators, but with some effort it can be done.

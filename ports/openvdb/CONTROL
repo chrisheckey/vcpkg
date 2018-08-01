@@ -1,8 +1,15 @@
 Source: openvdb
-Version: 5.0.0-1
+Version: 5.2.0-1
 Build-Depends: ilmbase, openexr, tbb, blosc, boost-iostreams, boost-system, boost-thread, boost-date-time, boost-any, boost-uuid, boost-interprocess
 Description: Sparse volume data structure and tools
 
 Feature: tools
 Description: OpenVDB utilities: view, print and render
 Build-Depends: glew, glfw3
+
+Feature: python
+Description: OpenVDB python bindings
+Build-Depends: boost-python2
+
+Feature maya
+Description: OpenVDB maya nodes
